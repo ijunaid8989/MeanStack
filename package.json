@@ -9,7 +9,10 @@
   "author": "Junaid Farooq",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.14.1",
     "express": "^4.13.3",
-    "jade": "^1.11.0"
+    "jade": "^1.11.0",
+    "logger": "0.0.1",
+    "morgan": "^1.6.1"
   }
 }
