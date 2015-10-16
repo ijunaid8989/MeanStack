@@ -1,0 +1,20 @@
+{
+  "name": "mean-stack",
+  "version": "0.0.0",
+  "authors": [
+    "Junaid Farooq <ijunaidfarooq@gmail.com>"
+  ],
+  "description": "Extreme learning it says in tutorilas",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "toastr": "~2.1.2",
+    "angular": "~1.4.7",
+    "angular-resource": "~1.4.7",
+    "angular-route": "~1.4.7"
+  }
+}
