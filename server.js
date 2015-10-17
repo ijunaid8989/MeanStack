@@ -17,6 +17,26 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended : false }));
 app.use(express.static(__dirname + '/public'));
 
+// MongoDB Connection
+mongoose.connect('mongodb://localhost/multivision');
+var db = mongoose.connection;
+//db.on('error',console.erorr.bind(console,"Connection erorr...."));
+db.once('open',function callback(){
+	console.log('multivision db is open');
+});
+
+//Mongo Scheme
+var messageSchema = mongoose.Schema({
+	message : String
+});
+
+var Message = mongoose.model('Message',messageSchema);
+var mongoMessage;
+Message.findOne().exec(function(err,messageDoc){
+	console.log(messageDoc);
+	mongoMessage = messageDoc.message;
+
+});
 
 
 // You can call them routes
@@ -24,7 +44,9 @@ app.get('/partials/:partialsPath', function(req,res){
 	res.render('partials/' + req.params.partialsPath);
 });
 app.get('*', function(req,res){
-	res.render('index');
+	res.render('index',{
+		mongoMessage: mongoMessage
+	});
 });
 
 var port = 3000;
