@@ -31,11 +31,11 @@ var messageSchema = mongoose.Schema({
 });
 
 var Message = mongoose.model('Message',messageSchema);
-var mongoMessage;
+var mongoMessage,id;
 Message.findOne().exec(function(err,messageDoc){
 	console.log(messageDoc);
 	mongoMessage = messageDoc.message;
-
+	id = messageDoc._id;
 });
 
 
@@ -45,7 +45,8 @@ app.get('/partials/:partialsPath', function(req,res){
 });
 app.get('*', function(req,res){
 	res.render('index',{
-		mongoMessage: mongoMessage
+		mongoMessage: mongoMessage,
+		id: id
 	});
 });
 
