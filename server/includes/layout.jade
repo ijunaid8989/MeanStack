@@ -5,7 +5,8 @@ html
 		link(rel="stylesheet", href="css/bootstrap.css")
 		link(rel="stylesheet", href="css/custom.css")
 		link(rel="stylesheet", href="vender/toastr/toastr.css")
+		base(href="/")
 	title Mean Stack App
-	body
+	body(ng-app="app")
 		block main-content
 		include scripts

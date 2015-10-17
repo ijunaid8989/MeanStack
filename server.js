@@ -1,6 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var	logger = require('morgan');
+var mongoose = require('mongoose');
 
 var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
@@ -17,6 +18,11 @@ app.use(bodyParser.urlencoded({ extended : false }));
 app.use(express.static(__dirname + '/public'));
 
 
+
+// You can call them routes
+app.get('/partials/:partialsPath', function(req,res){
+	res.render('partials/' + req.params.partialsPath);
+});
 app.get('*', function(req,res){
 	res.render('index');
 });
