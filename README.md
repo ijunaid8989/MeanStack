@@ -18,6 +18,7 @@ As we know mean in **MongoDB** , **ExpressJS**, **AngularJS**, **NodeJS**
 > - MongoLAB is being used as **NODE_ENV = production** as we are deploying it to Heroku.
 
 #### <i class="icon-file"></i> Credits
+
 This all Application is being developed under the Tutorial of PluraSight by [**Sir Joe Eames**](https://twitter.com/josepheames).
 I would like to thank my inspirations in Programming world
 
